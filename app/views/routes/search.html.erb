@@ -1,0 +1,10 @@
+<%= form_with( url: find_buses_url , method: :post, target: :'_blank') do |form| %>
+    <%= form.label :source, 'Source' %>
+    <%= form.text_field :source %>
+  
+    <%= form.label :destination, 'Destination' %>
+    <%= form.text_field :destination %>
+  
+    <%= form.submit 'Search' %>
+  <% end %>
+  

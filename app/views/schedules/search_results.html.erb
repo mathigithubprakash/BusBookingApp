@@ -1,0 +1,14 @@
+<!-- app/views/schedules/search_results.html.erb -->
+<h1>Search Results</h1>
+
+<% if @all_schedules.any? %>
+  <ul>
+    <% @all_schedules.each do |schedule| %>
+      <li><%= schedule.bus.name %> - <%= schedule.route.source %> to <%= schedule.route.destination %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No matching schedules found.</p>
+<% end %>
+
+<%= link_to "View Available Buses", buses_path %> <!-- Adjust the path based on your routes -->

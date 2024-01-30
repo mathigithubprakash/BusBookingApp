@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bus: one
+  departure_time: 2024-01-30 14:06:06
+  duration: 1
+
+two:
+  bus: two
+  departure_time: 2024-01-30 14:06:06
+  duration: 1

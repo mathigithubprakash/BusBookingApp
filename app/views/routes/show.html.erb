@@ -1,0 +1,13 @@
+<!-- Display selected route and associated buses -->
+<h1>Route: <%= "#{@route.source} to #{@route.destination}" %></h1>
+
+<% if @route.buses.present? %>
+  <h2>Buses for this route:</h2>
+  <ul>
+    <% @route.buses.each do |bus| %>
+      <li><%= bus.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No buses found for this route.</p>
+<% end %>

@@ -1,0 +1,12 @@
+<!-- app/views/schedules/search.html.erb -->
+<h1>Bus Search</h1>
+
+<%= form_tag(search_schedules_path, method: :get) do %>
+  <label for="source">Source:</label>
+  <%= text_field_tag :source %>
+
+  <label for="destination">Destination:</label>
+  <%= text_field_tag :destination %>
+
+  <%= submit_tag "Search" %>
+<% end %>
