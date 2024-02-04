@@ -1,0 +1,19 @@
+<h1>Available Seats</h1>
+<%= link_to 'Book a New Seat', new_bus_ticket_path(@bus) %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ticket Number</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tickets.each do |seat| %>
+      <tr>
+        <td><%= ticket.number %></td>
+        <td><%= ticket.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

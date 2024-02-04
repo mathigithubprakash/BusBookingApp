@@ -1,3 +1,11 @@
+<h1>Available Buses</h1>
+
 <% @buses.each do |bus| %>
- <%= bus.name %>
+  <h2><%= bus.name %></h2>
+  <% if bus.tickets.any? %>
+    <p>Available Tickets: <%= bus.available_tickets.count %></p>
+    <%= link_to 'Book Tickets', new_bus_ticket_path(bus) %>
+  <% else %>
+    <p>No available tickets for this bus.</p>
+  <% end %>
 <% end %>

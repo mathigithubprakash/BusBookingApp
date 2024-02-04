@@ -5,7 +5,7 @@
   <h2>Buses for this route:</h2>
   <ul>
     <% @route.buses.each do |bus| %>
-      <li><%= bus.name %></li>
+      <li><%= bus.name %> - <%= link_to 'View Seats', bus_seats_path(bus) %></li>
     <% end %>
   </ul>
 <% else %>

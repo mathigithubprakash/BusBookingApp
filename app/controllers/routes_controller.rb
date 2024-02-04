@@ -1,45 +1,15 @@
-   class RoutesController < ApplicationController
-    before_action :set_route, only: [ :find_buses]
-
-        def index
-          @routes = Route.all
-        end
-
-        def search
-            
-        end
-      
-        def show
-          # Existing code for the show action
-        end
-      
-        def create
-          @route = Route.new(route_params)
-      
-          if @route.save
-            redirect_to route_path(@route)
-          else
-            render :index
-          end
-        end
-
-        def find_buses
-          @buses = @route.buses
-
-          render 'find_buses'
-
-        end
-
-      
-        private
-
-        def set_route
-          @route = Route.where(source: params[:source], destination: params[:destination]).first
-        end
-
-      
-        def route_params
-          params.require(:route).permit(:source, :destination)
-        end
+class RoutesController < ApplicationController
+    def find_buses
+      @source = params[:source]
+      @destination = params[:destination]
+      @route = Route.by_source_and_destination(@source, @destination).first
+  
+      if @route
+        redirect_to srm_buses_path, notice: 'Buses found!'
+      else
+        flash.now[:alert] = 'No buses found for the given route.'
+        render 'search'
       end
-      
+    end
+  end
+  

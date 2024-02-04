@@ -1,4 +1,4 @@
-<%= form_with( url: find_buses_url , method: :post, target: :'_blank') do |form| %>
+<%= form_with( url: find_buses_url , method: :get) do |form| %>
     <%= form.label :source, 'Source' %>
     <%= form.text_field :source %>
   

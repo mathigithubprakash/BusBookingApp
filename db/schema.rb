@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_30_125311) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_02_121749) do
   create_table "buses", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_30_125311) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bus_id"
     t.index ["schedule_id"], name: "index_tickets_on_schedule_id"
   end
 
